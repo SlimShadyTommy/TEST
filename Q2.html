@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-Sorting Questionnaire</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { display: flex; flex-direction: column; align-items: center; }
+        .category { border: 1px solid #ccc; padding: 10px; margin: 5px; width: 90%; min-height: 50px; position: relative; }
+        .statement { background: #f0f0f0; padding: 5px; margin: 5px; cursor: move; }
+        .next-button, .back-button { margin-top: 20px; padding: 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        .counter { position: absolute; top: 5px; right: 10px; font-size: 12px; color: red; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <h2>Q-Sorting Questionnaire</h2>
+    <p>Drag and drop statements into the appropriate categories. Each category has a limit on how many statements you can place.</p>
+    
+    <div id="questions">
+        <!-- Page 1: Statements 1-10 -->
+        <div class="question active">
+            <div class="statements container">
+                <div class="statement" draggable="true" data-id="1">Using both my first language (L1) and English when interacting with LLMs improves my ability to prepare academic presentations.</div>
+                <div class="statement" draggable="true" data-id="2">Translanguaging with LLMs helps me structure my ideas more effectively.</div>
+                <div class="statement" draggable="true" data-id="3">When I use multiple languages with LLMs, I feel more confident in expressing my research ideas.</div>
+                <div class="statement" draggable="true" data-id="4">Switching between languages in LLMs helps me refine complex academic concepts before presenting.</div>
+                <div class="statement" draggable="true" data-id="5">I find it easier to develop presentation scripts when I use both L1 and English in my LLM interactions.</div>
+                <div class="statement" draggable="true" data-id="6">LLMs enhance my ability to present in English by allowing me to draft content in my first language first.</div>
+                <div class="statement" draggable="true" data-id="7">Using my first language in LLM interactions allows me to check for accuracy and coherence in my presentation materials.</div>
+                <div class="statement" draggable="true" data-id="8">Translanguaging during LLM-based preparation fosters deeper engagement with my research topic.</div>
+                <div class="statement" draggable="true" data-id="9">I often generate ideas in my L1 first and then use LLMs to refine them in English.</div>
+                <div class="statement" draggable="true" data-id="10">Using multiple languages with LLMs enables me to tailor my presentations for diverse audiences.</div>
+            </div>
+        </div>
+        
+        <!-- Page 2: Statements 11-20 -->
+        <div class="question hidden">
+            <div class="statements container">
+                <div class="statement" draggable="true" data-id="11">When I use translanguaging in LLMs, I can think more critically about my presentation content.</div>
+                <div class="statement" draggable="true" data-id="12">Using multiple languages while preparing with LLMs improves my academic vocabulary in English.</div>
+                <div class="statement" draggable="true" data-id="13">LLMs help bridge gaps between my L1 and English when structuring my arguments.</div>
+                <div class="statement" draggable="true" data-id="14">I use translanguaging in LLMs to clarify complex terms and concepts before translating them into English.</div>
+                <div class="statement" draggable="true" data-id="15">Switching languages in LLMs allows me to compare different ways of expressing the same idea.</div>
+                <div class="statement" draggable="true" data-id="16">I rely on LLMs to help me transition smoothly between my L1 and English in academic contexts.</div>
+                <div class="statement" draggable="true" data-id="17">LLMs enhance my ability to paraphrase and summarize key points in multiple languages.</div>
+                <div class="statement" draggable="true" data-id="18">When I struggle to express an idea in English, I use my first language in LLMs to help me articulate it better.</div>
+                <div class="statement" draggable="true" data-id="19">I consciously switch between languages in LLMs to gain deeper insights into my research topic.</div>
+                <div class="statement" draggable="true" data-id="20">Using translanguaging in LLMs helps me identify gaps in my academic writing and speaking skills.</div>
+            </div>
+        </div>
+
+        <!-- Page 3: Statements 21-30 -->
+        <div class="question hidden">
+            <div class="statements container">
+                <div class="statement" draggable="true" data-id="21">I find translanguaging in LLMs to be a useful strategy for improving my English presentation skills.</div>
+                <div class="statement" draggable="true" data-id="22">LLMs allow me to explore different linguistic registers when preparing my presentation.</div>
+                <div class="statement" draggable="true" data-id="23">Using multiple languages in LLMs makes my presentations more engaging and precise.</div>
+                <div class="statement" draggable="true" data-id="24">I believe translanguaging through LLMs supports my long-term academic language development.</div>
+                <div class="statement" draggable="true" data-id="25">I sometimes find it difficult to decide when to use my first language versus English in LLM interactions.</div>
+                <div class="statement" draggable="true" data-id="26">LLMs do not always recognize my translanguaging practices effectively.</div>
+                <div class="statement" draggable="true" data-id="27">I worry that excessive translanguaging with LLMs makes me over-reliant on AI-generated content.</div>
+                <div class="statement" draggable="true" data-id="28">Using multiple languages in LLMs sometimes results in inconsistencies in my presentation materials.</div>
+                <div class="statement" draggable="true" data-id="29">I have encountered inaccuracies when using LLMs for bilingual or multilingual content generation.</div>
+                <div class="statement" draggable="true" data-id="30">I believe that the effectiveness of translanguaging in LLMs depends on the quality of the AI model.</div>
+            </div>
+        </div>
+
+        <!-- Page 4: Statements 31-40 -->
+        <div class="question hidden">
+            <div class="statements container">
+                <div class="statement" draggable="true" data-id="31">I believe that using LLMs for translanguaging aligns with ethical academic practices.</div>
+                <div class="statement" draggable="true" data-id="32">I worry that relying on LLMs for translanguaging may compromise my originality in academic presentations.</div>
+                <div class="statement" draggable="true" data-id="33">I feel guilty using LLMs in multiple languages, as it may not fully reflect my own linguistic abilities.</div>
+                <div class="statement" draggable="true" data-id="34">I think translanguaging with LLMs should be openly acknowledged in academic work.</div>
+                <div class="statement" draggable="true" data-id="35">I consider translanguaging in LLMs to be an essential skill for EFL researchers.</div>
+                <div class="statement" draggable="true" data-id="36">Using LLMs exclusively in English makes me feel restricted in my expression.</div>
+                <div class="statement" draggable="true" data-id="37">I believe translanguaging through LLMs allows for greater inclusivity in academic discourse.</div>
+                <div class="statement" draggable="true" data-id="38">Academic presentations should encourage bilingual or multilingual engagement with AI tools.</div>
+                <div class="statement" draggable="true" data-id="39">The ability to use multiple languages in LLMs is an advantage for non-native English speakers.</div>
+                <div class="statement" draggable="true" data-id="40">Universities should support translanguaging-based AI literacy to help EFL researchers optimize LLM usage.</div>
+            </div>
+        </div>
+
+        <h3>Categories</h3>
+        <div class="container">
+            <div class="category" data-max="2" ondrop="drop(event, this)" ondragover="allowDrop(event)">+4 Strongly Agree (2 max) <span class="counter">0/2</span></div>
+            <div class="category" data-max="3" ondrop="drop(event, this)" ondragover="allowDrop(event)">+3 Agree (3 max) <span class="counter">0/3</span></div>
+            <div class="category" data-max="5" ondrop="drop(event, this)" ondragover="allowDrop(event)">+2 Somewhat Agree (5 max) <span class="counter">0/5</span></div>
+            <div class="category" data-max="7" ondrop="drop(event, this)" ondragover="allowDrop(event)">+1 Slightly Agree (7 max) <span class="counter">0/7</span></div>
+            <div class="category" data-max="8" ondrop="drop(event, this)" ondragover="allowDrop(event)">0 Neutral (8 max) <span class="counter">/08</span></div>
+            <div class="category" data-max="7" ondrop="drop(event, this)" ondragover="allowDrop(event)">-1 Slightly Disagree (7 max) <span class="counter">0/7</span></div>
+            <div class="category" data-max="5" ondrop="drop(event, this)" ondragover="allowDrop(event)">-2 Somewhat Disagree (5 max) <span class="counter">0/5</span></div>
+            <div class="category" data-max="3" ondrop="drop(event, this)" ondragover="allowDrop(event)">-3 Disagree (3 max) <span class="counter">0/3</span></div>
+            <div class="category" data-max="2" ondrop="drop(event, this)" ondragover="allowDrop(event)">-4 Strongly Disagree (2 max) <span class="counter">0/2</span></div>
+        </div>
+        <button class="back-button" onclick="previousQuestion()">Back</button>
+        <button class="next-button" onclick="nextQuestion()">Next</button>
+    </div>
+
+    <script>
+        let currentQuestion = 0;
+        let questions = document.querySelectorAll('.question');
+        let maxQuestions = questions.length;
+
+        document.querySelectorAll('.statement').forEach(statement => {
+            statement.addEventListener('dragstart', function(event) {
+                event.dataTransfer.setData("text", event.target.getAttribute('data-id'));
+            });
+        });
+
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drop(event, category) {
+            event.preventDefault();
+            let maxItems = parseInt(category.getAttribute("data-max"));
+            let currentItems = category.querySelectorAll(".statement").length;
+
+            if (currentItems >= maxItems) {
+                alert("You have reached the maximum allowed statements for this category.");
+                return;
+            }
+
+            let data = event.dataTransfer.getData("text");
+            let draggedElement = document.querySelector(`[data-id='${data}']`);
+            category.appendChild(draggedElement);
+            updateCounter(category);
+        }
+
+        function updateCounter(category) {
+            let maxItems = parseInt(category.getAttribute("data-max"));
+            let currentItems = category.querySelectorAll(".statement").length;
+            let counter = category.querySelector(".counter");
+            counter.textContent = `${currentItems}/${maxItems}`;
+        }
+
+        function nextQuestion()            {
+ if (currentQuestion < maxQuestions - 1) {
+                questions[currentQuestion].classList.add('hidden');
+                currentQuestion++;
+                questions[currentQuestion].classList.remove('hidden');
+            } else {
+                alert("You have completed all questions!");
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                questions[currentQuestion].classList.add('hidden');
+                currentQuestion--;
+                questions[currentQuestion].classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
